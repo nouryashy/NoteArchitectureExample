@@ -30,8 +30,8 @@ public class NoteViewModel extends AndroidViewModel {
         mNoteRepository.delete(note);
     }
 
-    public void deleteAllNotes(Note note) {
-        mNoteRepository.deleteAllNotes(note);
+    public void deleteAllNotes() {
+        mNoteRepository.deleteAllNotes();
     }
 
     public LiveData<List<Note>> getAllnotes() {

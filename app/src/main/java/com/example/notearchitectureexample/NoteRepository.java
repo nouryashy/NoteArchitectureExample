@@ -23,15 +23,15 @@ public class NoteRepository {
     }
 
     public void update(Note note) {
-new InsertNoteAsyncTask(noteDao).execute(note);
+        new UpdateNoteAsyncTask(noteDao).execute(note);
     }
 
     public void delete(Note note) {
-new InsertNoteAsyncTask(noteDao).execute(note);
+        new DeleteNoteAsyncTask(noteDao).execute(note);
     }
 
-    public void deleteAllNotes(Note note) {
-new InsertNoteAsyncTask(noteDao).execute(note);
+    public void deleteAllNotes() {
+        new DeleteAllNotesAsyncTask(noteDao).execute();
     }
 
     public LiveData<List<Note>> getAllNotes() {
@@ -65,6 +65,7 @@ new InsertNoteAsyncTask(noteDao).execute(note);
             return null;
         }
     }
+
     public static class DeleteNoteAsyncTask extends AsyncTask<Note, Void, Void> {
         private NoteDataAccessObject noteDao;
 
@@ -78,6 +79,7 @@ new InsertNoteAsyncTask(noteDao).execute(note);
             return null;
         }
     }
+
     public static class DeleteAllNotesAsyncTask extends AsyncTask<Void, Void, Void> {
         private NoteDataAccessObject noteDao;
 
