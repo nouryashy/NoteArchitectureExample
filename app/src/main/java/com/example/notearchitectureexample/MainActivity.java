@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<Note> notes) {
                 //update RecycleView'
 //                Toast.makeText(MainActivity.this, "onChanged", Toast.LENGTH_SHORT).show();
-                adapter.setNotes(notes);
+                adapter.submitList(notes);
             }
         });
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
